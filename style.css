@@ -35,6 +35,10 @@
 .data-entry input{
 	width: 300px;
 	height: 40px;
+	margin-top: 10px;
+	margin-left: 20px;
+	padding-left: 10px;
+	font-size: 20px;
 }
 
 .data-entry a{
@@ -44,4 +48,16 @@
 input::placeholder{
 	font-size: 20px;
 	right:0px;
+}
+
+.food-data div {
+	float: left;
+}
+
+.food-data div label {
+	display: block;
+}
+
+.food-data button {
+	padding: 10px;
 }
