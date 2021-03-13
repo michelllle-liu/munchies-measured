@@ -1,1 +1,47 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Montserrat', sans-serif;
+}
 
+.content{
+	background-image: url(images/food-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	background-position: center;
+}
+
+.header{
+	display:flex;
+	height: 150px;
+	width: 100%;
+	background-color:hsla(0, 100%, 90%, 0.7);;
+}
+
+.header p{
+	font-size: 100px;
+	margin:20px;
+	letter-spacing: 7px
+}
+
+.data-entry{
+	font-size: 30px;
+	height: 200px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.data-entry input{
+	width: 300px;
+	height: 40px;
+}
+
+.data-entry a{
+	font-size: 16px;
+}
+
+input::placeholder{
+	font-size: 20px;
+	right:0px;
+}
