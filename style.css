@@ -49,6 +49,10 @@ input::placeholder{
 	font-size: 20px;
 	right:0px;
 }
+.food-data{
+	display:flex;
+	justify-content:center;
+}
 
 .food-data div {
 	float: left;
@@ -59,5 +63,7 @@ input::placeholder{
 }
 
 .food-data button {
+	height:20px;
 	padding: 10px;
+	margin-top:5vh;
 }
