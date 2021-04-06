@@ -71,3 +71,18 @@ input::placeholder{
 	padding: 10px;
 	margin-top:5vh;
 }
+
+table {
+	width: 100%;
+	font-size: 20px;
+}
+
+td {
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+
+th {
+	border-bottom: 2px solid black;
+}
