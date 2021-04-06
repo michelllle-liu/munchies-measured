@@ -30,5 +30,40 @@
 			
 		</div>
 	</div>
+	<table id="userTable" border="1" >
+		<thead>
+			<tr>
+				<th>Food Name</th>
+				<td><input type="text" name="foodName" id="foodName"></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Calories/Serving</th>
+				<td><input type="text" name="calories" id="calories"></td>
+			</tr>
+
+			<tr>
+				<th>Servings</th>
+				<td><input type="text" name="servings" id="servings"></td>
+			</tr>
+
+			<tr>
+				<td><input type="button" name="button" id="button" value="Add To list" onclick="drawTable()"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table border="1" id="genTable">
+		<thead>
+			<tr>
+				<th>Food Name</th>
+				<th>Calories/Serving</th>
+				<th>Servings</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+	</table>
+
 </body>
 </html>
