@@ -1,142 +1,82 @@
-/*async function search(event){   //none of this code actually works
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("modalButton");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+const myForm= document.getElementById("CalorieIntake"); 
+myForm.addEventListener('submit', submit);
+
+function submit(event){
   event.preventDefault();
+  const formData = new FormData(myForm);//get form data
+  const person = Object.fromEntries(formData);//convert form data to object
   
-  const form = event.target.elements;
+  console.log(person.weight);
+  console.log(person.heightFT);
+  console.log(person.heightInch);
+  console.log(person.age);
+  console.log(person.sex);
+  console.log(person.activity);
 
-  const query = form['food1'].value;//get text from form
-
-  const response = await fetch(
-    `https://nutrition-api.esha.com/foods?query=${query}&start=0&count=25&spell=true`, 
-    {
-      method:"GET",
-      headers: {
-        "Accept":"application/json",
-        "Ocp-Apim-Subscription-Key":"7504fb97bd1d4620a87a42c5d33a5b71"
-      },
-      redirect:'follow'              
-    }       
-  );
-
-  event.target.reset(); // clears the form fields
-  const data = await response.json(); 
-  displayResults(data);
-  
+ 
+  CalculateDailyIntake(person);
+  myForm.reset();
 }
 
-function displayResults(data){
+function CalculateDailyIntake(person){
+  let heightCM=(person.heightFT*30.48)+ (person.heightInch*2.54);
 
-}
-*/
+  let weightKG= person.weight/2.20462262;
+  console.log(weightKG);
 
+let factor=0.0
+  if(person.activity==="Sedentary"){
+    factor=1.2;}
 
-/*async function loadFoods(event){
-
-  const form = event.target.elements;
-  const query = form['food1'].value;//get text from form
-
-  let url= `https://nutrition-api.esha.com/foods?query=${query}&start=0&count=25&spell=true`;
-  
-  var xhttp = new XMLHttpRequest();   //tried using ajax
-  xhttp.open("GET", url, true);
-  
-  xhttp.setRequestHeader("Accept","application/json");
-  xhttp.setRequestHeader("Ocp-Apim-Subscription-Key","7504fb97bd1d4620a87a42c5d33a5b71");
-  xhttp.send(`query=${query}&start=0&count=25&spell=true`);
-  drawTable(records);
-}
-*/
-
-/*function drawTable(records){
-    let result = document.querySelector('#result');
-    //add html code inside of result
-    let html = '';// create html string
-    for(let record of records){
-        //build html string
-        html += `<tr>
-          <td>${record.description}</td> 
-        </tr>`;
-    }
-    result.innerHTML = html;//add html string to DOM
-}*/
-/*<script type="text/javascript"> //has to go in index.html
- $(document).ready(function() {
-        var params = {
-            // Request parameters
-            "query": "banana",
-            "start": "0",
-            "count": "25",
-            "spell": "true",
-        };
-      
-        $.ajax({
-            url: "https://nutrition-api.esha.com/foods?" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Accept","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
-            },
-            type: "GET",
-            // Request body
-            data:
-        })
-        .done(function(data) {
-            alert("success");
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
-    </script>
-    */
+  if(person.activity==="LowModerate"){
+    factor=1.4;}
     
-    /*<script type="text/javascript">   //got this from the sample code of the api website, it uses jquery
-  let query="banana";   //tried hardcoding it
-  let url=`https://nutrition-api.esha.com/foods?query=${query}&start=0&count=25&spell=true`;
+  if(person.activity==="VeryActive"){
+    factor=1.6;}
 
- $(document).ready(function() {
-        var params = {
-            // Request parameters
-            "query": "banana",
-            "start": "0",
-            "count": "25",
-            "spell": "true",
-        };
-      
-        $.ajax({
-            url: "https://nutrition-api.esha.com/foods?" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Accept","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
-            },
-            type: "GET",
-            // Request body
-            data:$.get(url,function(records){
-               records = response.json();
-              drawTable(records);
-            }),
-        })
-        .done(function(data) {
-            alert("success");
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
-   
-
-  function drawTable(records){
-    let result = document.querySelector('#result');
-    //add html code inside of result
-    let html = '';// create html string
-    for( let record of records){
-        //build html string
-        html += `<tr>
-          <td>${record.description}</td> 
-        </tr>`;
-    }
-    result.innerHTML = html;//add html string to DOM
-}
-</script>
+  let BMR=0.0
+  let dailyIntake=0;
   
-*/
+  if(person.sex==="Male"){
+    BMR=(10.0*weightKG) + (6.25*heightCM) - (5*person.age) + 5.0;
+    console.log(BMR);
+
+    dailyIntake= Math.round(BMR * factor);
+    console.log(`daily calorie intake ${dailyIntake} calories`);
+  }
+  else{
+    BMR=(10.0*weightKG) + (6.25*heightCM) - (5*person.age) -161.0;
+    console.log(BMR);
+
+    dailyIntake= Math.round(BMR * factor);
+    console.log(`daily calorie intake ${dailyIntake} calories`);
+  }
+
+  document.getElementById("dailyReq").innerHTML=dailyIntake;
+}
