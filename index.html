@@ -17,10 +17,54 @@
 
 		<div class="main">
 			<div class="data-entry">
-				<p>Daily Calorie Requirement</p>
-				<input type="text" placeholder="Calories">
+				<div class="data-entry">
+        <label for="dailyReq">Daily Calorie Requirement</label><br>
+				<input type="number" id="dailyReq" name="dailyReq" placeholder="Calories">
 				<br>
-				<a href="https://www.google.com/">Not sure?</a>
+				
+            <!-- Trigger/Open The Modal -->
+          <button id="modalButton">Not Sure?</button>
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <form id="CalorieIntake" target="_self">
+                <label for="weight">Weight (lbs)</label>
+                <input type="number" id="weight" name="weight" min="1" required><br>
+
+                <label>Height</label>
+                <label for="heightFT">(ft)</label>
+                <input type="number" id="heightFT" name="heightFT" min="1" required>
+                <lable for="heightInch">(inches)</lable>
+                <input type="number" id="heightInch" name="heightInch" min="0" required><br>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="18" max="100" required> <br>
+
+                <label for="sex">Sex</label>
+                <input list="sex" name="sex" required><br>
+                  <datalist id="sex">
+                    <option value="Male">
+                    <option value="Female">
+                  </datalist>
+              
+                <lable for="activity">Activity Level</lable>
+                <input list="activity" name="activity" required><br>
+                <datalist id="activity">
+                  <option value="Sedentary">
+                  <option value="Low-Moderate">
+                  <option value="Very Active"> 
+                </datalist>
+                
+                <input type="submit" value="Submit" name="submit">
+
+            </form>
+            </div> <!-- End of Modal Content  -->
+
+          </div>  <!-- End of Modal -->
 			</div>	
 
 			<div class="data-entry">
