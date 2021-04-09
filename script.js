@@ -78,5 +78,5 @@ let factor=0.0
     console.log(`daily calorie intake ${dailyIntake} calories`);
   }
 
-  document.getElementById("dailyReq").innerHTML=dailyIntake;
+  document.getElementById("dailyReq").innerHTML=`Daily Calorie Reqirement is ${dailyIntake} calories`;
 }
