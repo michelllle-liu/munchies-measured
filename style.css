@@ -14,15 +14,17 @@
 
 .header{
 	display:flex;
-	height: 150px;
+	height: 8vw;
 	width: 100%;
-	background-color:hsla(0, 100%, 90%, 0.7);;
+	background-color:hsla(0, 100%, 90%, 0.7);
 }
 
 .header p{
-	font-size: 100px;
+	font-size: 4vw;
+	font-weight: bold;
 	margin:20px;
-	letter-spacing: 7px
+	letter-spacing: 7px;
+	white-space: nowrap;
 }
 
 .data-entry{
@@ -35,6 +37,17 @@
 .data-entry input{
 	width: 300px;
 	height: 40px;
+	margin-top: 10px;
+	margin-left: 20px;
+	padding-left: 10px;
+	font-size: 20px;
+	border: none;
+	border-bottom: 2px solid;
+}
+
+.data-entry input:focus {
+	outline: none;
+	background-color: lightblue;
 }
 
 .data-entry a{
@@ -44,4 +57,39 @@
 input::placeholder{
 	font-size: 20px;
 	right:0px;
+}
+
+.food-data{
+	display:flex;
+	justify-content:center;
+}
+
+.food-data div {
+	float: left;
+}
+
+.food-data div span button {
+	height:40px;
+	padding: 10px;
+	margin-top:5vh;
+}
+
+.table {
+	margin-top: 20px;
+}
+
+table {
+	width: 80%;
+	margin: auto;
+	font-size: 20px;
+}
+
+td {
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+
+th {
+	border-bottom: 2px solid black;
 }
