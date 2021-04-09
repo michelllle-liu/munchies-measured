@@ -14,15 +14,17 @@
 
 .header{
 	display:flex;
-	height: 150px;
+	height: 8vw;
 	width: 100%;
 	background-color:hsla(0, 100%, 90%, 0.7);;
 }
 
 .header p{
-	font-size: 100px;
+	font-size: 4vw;
+	font-weight: bold;
 	margin:20px;
-	letter-spacing: 7px
+	letter-spacing: 7px;
+	white-space: nowrap;
 }
 
 .data-entry{
@@ -70,6 +72,10 @@ input::placeholder{
 	height:40px;
 	padding: 10px;
 	margin-top:5vh;
+}
+
+.table {
+	margin-top: 20px;
 }
 
 table {
