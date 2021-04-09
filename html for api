@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<img src="images/placeholder-icon.png" width=100px height=100px>
+			<p>APP NAME</p>
+		</div>
+
+		<div class="main">
+			<div class="data-entry">
+				<p>Daily Calorie Requirement</p>
+				<input type="text" placeholder="Calories">
+				<br>
+				<a href="https://www.google.com/">Not sure?</a>
+			</div>	
+
+			<div class="data-entry">
+				<p>What did you eat today?</p>
+				<form class="food-data">
+					<div>
+						<input type="text" name="food" id="food" placeholder="Food item">
+						<input type="number" id="calories" placeholder="Number of calories">
+						<input type="text" id="serving" placeholder="Serving size">
+						<input type="number" id="quantity" placeholder="Quantity">
+						<span class="btn">
+							<button type="submit" onclick="foodSearch(document.getElementById('food').value)">Add</button>
+						</span>
+					</div>
+				</form>
+	  	</div>
+
+			<div id="search-results">
+			
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
