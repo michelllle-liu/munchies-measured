@@ -1,0 +1,19 @@
+async function foodSearch (foodName) {
+	console.log (foodName);
+	
+	const api_url = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=sdgfEjcNS5QErcOBqnp8gA2zumlDbMp2R8UXRRQj&query=${foodName}`;
+
+	function getData () {
+		return fetch (api_url)
+		.then (response => response.json())
+	}
+	
+	getData().then(data => console.log(data));
+}
+
+// calling function like this works
+foodName = 'bread';
+foodSearch (foodName);
+
+// calling function on button click DOES pass the user input to function - console outputs the foodName the user entered and the foodName
+// is correctly passed to api_url, but the function is still unable to fetch for some reason.
