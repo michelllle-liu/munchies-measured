@@ -166,6 +166,10 @@ function drawTable(){
 	calServCol.innerHTML = calServ[i];
 	servingCol.innerHTML = servings[i];
 	totalCol.innerHTML = calTot;
+	
+	let dCal = getDaily();
+	let pCal = caloriePerc(dCal, calTot);
+	const pBar = new ProgressBar(document.querySelector('.barWrap'), pCal);
 
 	count++;
 	i++;
@@ -178,3 +182,47 @@ function clearForm () {
 	document.getElementById('calServe').value = "";
 	document.getElementById('servings').value = "";
 }
+
+// PROGRESS BAR
+
+function getDaily(){
+	let dailyLimit = document.getElementById('recCal').value;;
+	console.log(dailyLimit);
+	return dailyLimit;
+}
+
+
+function caloriePerc(dailyLimit, calTotal){
+	let dailyPerc = (calTotal/dailyLimit)*100;
+	dailyPerc = Math.round(dailyPerc *100) / 100;
+	return dailyPerc;
+}
+
+class ProgressBar{
+	constructor (barWrapElement, value=0) {
+		this.valueProgPerc = barWrapElement.querySelector('.progPerc');
+		this.valueProgBar = barWrapElement.querySelector('.progBar');
+		this.changeBar(value);
+	}
+
+	changeBar(newProg){
+
+		this.value = newProg;
+		this.update();
+	}
+
+	update(){
+		const perc = this.value + '%';
+		if(this.value <= 100){
+			this.valueProgBar.style.width = perc;
+			this.valueProgPerc.textContent = perc;
+		}
+		else{
+			this.valueProgPerc.textContent = perc;
+			this.valueProgBar.style.width = "100%";
+		}
+
+	}
+}
+
+const pBar = new ProgressBar(document.querySelector('.barWrap'), 0);
