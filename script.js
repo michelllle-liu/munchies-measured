@@ -14,14 +14,13 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-// this js only works for the modal box, and not the search results for some reason
 window.addEventListener("click", function(event) {
 	if (event.target == modal) {
-    modal.style.display = "none";
-  }
-	if (event.target == document.getElementById('search-results')) {
-    document.getElementById('search-results').style.display = "none";
-  }
+    		modal.style.display = "none";
+  	}
+	if (event.target != document.getElementById('search-results')) {
+		document.getElementById('search-results').style.display = "none";
+  	}
 });
 
 const myForm= document.getElementById("CalorieIntake"); 
