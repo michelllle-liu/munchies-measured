@@ -16,15 +16,14 @@
 		</div>
 
 		<div class="main">
-
 			<div class="data-entry">
 				<p>Recommended daily calorie intake</p>
 				<input type="text" id="recCal" placeholder="Calories">
-				<br>
+				
 				
 				<!-- Trigger for modal box -->
 				<a href="#myModal" id="modalLink">Not Sure?</a>
-
+				<br>
 			  <!-- The Modal -->
 			  <div id="myModal" class="modal">
 
@@ -86,6 +85,7 @@
 						<input type="text" id="foodName" placeholder="Food item">
 						<input type="number" id="calServe" placeholder="Calories per serving">
 						<input type="number" id="servings" placeholder="Number of servings">
+						<br>
 						<span class="btn">
 							<button type="submit" onclick="drawTable(); return false">Add</button>
 						</span>
@@ -110,6 +110,7 @@
 			<div class="barWrap">
 				<div class="progPerc"></div>
 				<div class="progBar"></div>
+				<p id="inspiration"></p>
 			</div>
 			
 		</div>
