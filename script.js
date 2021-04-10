@@ -1,4 +1,4 @@
-// DETERMINING THE RECOMMENDED DAILY CALORIE INTAKE
+/ DETERMINING THE RECOMMENDED DAILY CALORIE INTAKE
 
 let modal = document.getElementById("myModal");
 
@@ -14,13 +14,14 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
+// this js only works for the modal box, and not the search results for some reason
 window.addEventListener("click", function(event) {
 	if (event.target == modal) {
-    		modal.style.display = "none";
-  	}
+    modal.style.display = "none";
+  }
 	if (event.target != document.getElementById('search-results')) {
-		document.getElementById('search-results').style.display = "none";
-  	}
+    document.getElementById('search-results').style.display = "none";
+  }
 });
 
 const myForm= document.getElementById("CalorieIntake"); 
@@ -195,7 +196,6 @@ function clearForm () {
 }
 
 // PROGRESS BAR
-
 function getDaily(){
 	let dailyLimit = document.getElementById('recCal').value;;
 	console.log(dailyLimit);
@@ -204,10 +204,17 @@ function getDaily(){
 
 
 function caloriePerc(dailyLimit, calTotal){
-	let dailyPerc = (calTotal/dailyLimit)*100;
-	dailyPerc = Math.round(dailyPerc *100) / 100;
-	return dailyPerc;
+	if(dailyLimit>0){
+		let dailyPerc = (calTotal/dailyLimit)*100;
+		dailyPerc = Math.round(dailyPerc *100) / 100;
+		return dailyPerc;
+	}
+	else{
+		dailyPerc = 0;
+		return dailyPerc;		
+	}
 }
+
 
 class ProgressBar{
 	constructor (barWrapElement, value=0) {
@@ -227,10 +234,27 @@ class ProgressBar{
 		if(this.value <= 100){
 			this.valueProgBar.style.width = perc;
 			this.valueProgPerc.textContent = perc;
+
+			if(this.value <=25){
+				document.getElementById('inspiration').textContent = "Keep Going!"; 
+			}
+			else if(this.value>25 && this.value <50){
+				document.getElementById('inspiration').textContent = "Keep it up!";
+			}
+			else if(this.value>=50 && this.value <=75){
+				document.getElementById('inspiration').textContent = "You're almost there!";
+			}
+			else if(this.value>75 && this.value <100){
+				document.getElementById('inspiration').textContent = "Just a little more";
+			}
+			else{
+				document.getElementById('inspiration').textContent = "Congrats you did it!";
+			}
 		}
 		else{
 			this.valueProgPerc.textContent = perc;
 			this.valueProgBar.style.width = "100%";
+			document.getElementById('inspiration').textContent = "Wow, a little too much bucko!";
 		}
 
 	}
