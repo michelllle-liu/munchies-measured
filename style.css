@@ -140,6 +140,7 @@ td {
 
 th {
 	border-bottom: 2px solid black;
+	padding-top: 30px;
 }
 
 .barWrap{
@@ -174,4 +175,28 @@ th {
 
 .cal-label{
 	text-align: center;
+}
+
+#search-results{
+  width: 50%;
+  height: 60px;
+  margin : auto;
+  overflow-y: auto;
+}
+
+#search-results a::after{
+ content: " ";
+ display: block; 
+ height: 30px;
+ width: 50%;
+}
+
+#search-results a{
+  display: block;
+}
+
+.searchbtn{
+  height:40px;
+	padding: 10px;
+	margin-top:5vh;
 }
