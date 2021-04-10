@@ -114,6 +114,7 @@ input::placeholder{
 
 .food-data div {
 	float: left;
+	position: relative;
 }
 
 .food-data div span button {
@@ -130,6 +131,7 @@ table {
 	width: 80%;
 	margin: auto;
 	font-size: 20px;
+	padding-top: 50px;
 }
 
 td {
@@ -140,7 +142,7 @@ td {
 
 th {
 	border-bottom: 2px solid black;
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
 .barWrap{
@@ -175,6 +177,7 @@ th {
 
 .cal-label{
 	text-align: center;
+	padding-top: 40px;
 }
 
 #search-results{
@@ -187,7 +190,7 @@ th {
 #search-results a::after{
  content: " ";
  display: block; 
- height: 30px;
+ height: 50px;
  width: 50%;
 }
 
