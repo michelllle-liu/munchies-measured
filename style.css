@@ -5,6 +5,7 @@
 }
 
 .content{
+	display:grid;
 	background-image: url(images/food-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -28,6 +29,16 @@
 }
 
 .data-entry{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-content: center;
+	align-items: center;
+	margin:5vh;
+	padding-top:3vh;
+	padding-bottom:3vh;
+	padding-right: 2vh;
+	padding-left: 2vh;
 	font-size: 30px;
 	height: 200px;
 	text-align: center;
@@ -37,7 +48,7 @@
 .data-entry input{
 	width: 300px;
 	height: 40px;
-	margin-top: 10px;
+	margin-top: 3vh;
 	margin-left: 20px;
 	padding-left: 10px;
 	font-size: 20px;
@@ -96,6 +107,11 @@
   animation-duration: 0.4s
 }
 
+#modalLink{
+	margin:auto;
+	margin-bottom:3vh;
+}
+
 /* Animation */
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
@@ -112,6 +128,7 @@ input::placeholder{
 	justify-content:center;
 }
 
+
 .food-data div {
 	float: left;
 }
@@ -123,12 +140,16 @@ input::placeholder{
 }
 
 .table {
-	margin-top: 20px;
+	/*padding-top:3vh;*/
+	margin-top: 3vh;
 }
 
 table {
+	align-content: center;
 	width: 80%;
 	margin: auto;
+	margin-top:5vh;
+	margin-bottom: 5vh;
 	font-size: 20px;
 }
 
@@ -147,7 +168,8 @@ th {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	width: 300px;
+	margin-bottom:auto;
+	width: 50vw;
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 10px;
@@ -174,18 +196,28 @@ th {
 }
 
 .cal-label{
+	margin-top:3em;
+	margin-bottom: auto;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#inspiration{
+	margin-top:1em;
+	padding-bottom: 2em;
 	text-align: center;
 }
 
 #search-results{
-  width: 400px;
-  height: 200px;
+  	width: 400px;
+  	height: 200px;
 	padding-top: 20px;
-  margin-top: 10px;
+ 	 margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: auto;
-  overflow-y: auto;
+ 	overflow-y: auto;
 	display: none;
 	z-index: 1;
 	position: absolute;
@@ -200,14 +232,14 @@ th {
 }
 
 #search-results a::after{
- content: " ";
- display: block; 
- height: 30px;
- width: 50%;
+ 	content: " ";
+ 	display: block; 
+ 	height: 30px;
+	width: 50%;
 }
 
 #search-results a{
-  display: block;
+  	display: block;
 	text-align: left;
 	padding-left: 10px;
 }
@@ -221,7 +253,7 @@ th {
 }
 
 .searchbtn{
-  height:40px;
+  	height:40px;
 	padding: 10px;
 	margin-top:5vh;
 }
