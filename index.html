@@ -18,17 +18,17 @@
 		<div class="main">
 			<div class="data-entry">
 				<p>Recommended daily calorie intake</p>
-				<input type="text" id="recCal" placeholder="Calories">
+				<input id="recCal" type="text" placeholder="Calories">
 				<br>
-				
+
 				<!-- Trigger for modal box -->
 				<a href="#myModal" id="modalLink">Not Sure?</a>
 
-			  <!-- The Modal -->
-			  <div id="myModal" class="modal">
+			  	<!-- The Modal -->
+			  	<div id="myModal" class="modal">
 
-				  <!-- Modal content -->
-				  <div class="modal-content">
+				  	<!-- Modal content -->
+				  	<div class="modal-content">
 				      <span class="close">&times;</span>
 				      <form id="CalorieIntake" target="_self">
 					<label for="weight">Weight (lbs)</label>
@@ -63,7 +63,8 @@
 				    </form>
 			    </div> <!-- End of Modal Content  -->
 				</div>  <!-- End of Modal -->
-			</div>
+			</div>	
+
 
 			<div class="data-entry">
 				<p>What did you eat today?</p>
@@ -104,6 +105,12 @@
 				</table>
 			</div>
 		</div>
+	</div>
+
+	<p class="cal-label">Calorie Progress</p>
+	<div class="barWrap">
+		<div class="progPerc"></div>
+		<div class="progBar"></div>
 	</div>
 
 	<script src="script.js"></script>
