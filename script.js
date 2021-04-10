@@ -14,11 +14,15 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
+// this js only works for the modal box, and not the search results for some reason
+window.addEventListener("click", function(event) {
+	if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+	if (event.target == document.getElementById('search-results')) {
+    document.getElementById('search-results').style.display = "none";
+  }
+});
 
 const myForm= document.getElementById("CalorieIntake"); 
 myForm.addEventListener('submit', submit);
@@ -105,7 +109,14 @@ function displaySearchResults (searchResults) {
 	}
 
 	document.querySelector('#search-results').innerHTML = html;
+	document.getElementById('search-results').style.display = "block";
 }
+
+// window.addEventListener("click", function(event) {
+// 	if (event.target == document.getElementById('search-results')) {
+//     document.getElementById('search-results').style.display = "none";
+//   }
+// 	});
 
 async function getFoodDetails (fdcId) {
 	try {
@@ -135,6 +146,7 @@ function autofill (foodDetails) {
 
 	document.querySelector('#search-results').innerHTML = "";
 	document.getElementById('food').value = "";
+	document.getElementById('search-results').style.display = "none";
 }
 
 // GENERATING TABLE OF FOODS EATEN
