@@ -51,10 +51,10 @@ function CalculateDailyIntake(person){
   if(person.activity==="Sedentary"){
     factor=1.2;}
 
-  if(person.activity==="LowModerate"){
+  if(person.activity==="Low-Moderate"){
     factor=1.4;}
     
-  if(person.activity==="VeryActive"){
+  if(person.activity==="Very Active"){
     factor=1.6;}
 
   let BMR=0.0
