@@ -166,7 +166,7 @@ function drawTable(){
 	calServCol.innerHTML = calServ[i];
 	servingCol.innerHTML = servings[i];
 	totalCol.innerHTML = calTot;
-	
+
 	let dCal = getDaily();
 	let pCal = caloriePerc(dCal, calTot);
 	const pBar = new ProgressBar(document.querySelector('.barWrap'), pCal);
