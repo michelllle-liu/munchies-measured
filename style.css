@@ -90,7 +90,7 @@
   padding: 20px;
   border: 1px solid #888;
 	border-radius: 5px;
-  width: 50%;
+  width: 75%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 0.4s
@@ -224,4 +224,11 @@ th {
   height:40px;
 	padding: 10px;
 	margin-top:5vh;
+}
+
+@media screen and (max-width:1000px) {
+  div.modal-content{
+    font-size: 20px;
+    width:50%;
+  }
 }
