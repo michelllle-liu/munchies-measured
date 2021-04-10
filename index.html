@@ -73,7 +73,7 @@
 				<div class="search-bar">
 					<form>
 						<input type="text" id="food" placeholder="Search food...">
-						<button type="submit" onclick="foodSearch(document.getElementById('food').value); return false">Search</button>
+						<button type="submit" onclick="foodSearch(document.getElementById('food').value); return false" class="searchbtn">Search</button>
 					</form>
 				</div>
 
@@ -85,7 +85,7 @@
 					<div>
 						<input type="text" id="foodName" placeholder="Food item">
 						<input type="number" id="calServe" placeholder="Calories per serving">
-						<input type="number" id="servings" placeholder="Number of servings">
+						<input type="number" id="servings" placeholder="Number of servings" min="1" required>
 						<span class="btn">
 							<button type="submit" onclick="drawTable(); return false">Add</button>
 						</span>
