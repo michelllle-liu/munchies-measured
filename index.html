@@ -5,13 +5,13 @@
 	<title>Munchies Measured</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<div class="content">
+
 		<div class="header">
-			<!-- <img src="images/placeholder-icon.png" width=100px height=100px> -->
 			<p>Munchies Measured</p>
 		</div>
 
@@ -21,52 +21,53 @@
 				<p>Recommended daily calorie intake</p>
 				<input type="text" id="recCal" placeholder="Calories">
 				<br>
-				
 				<!-- Trigger for modal box -->
 				<a href="#myModal" id="modalLink">Not Sure?</a>
-
+				
 			  <!-- The Modal -->
 			  <div id="myModal" class="modal">
 
-				  <!-- Modal content -->
+				  <!-- Modal content - a form which will calculate the recommended daily calorie intake for the user -->
 				  <div class="modal-content">
-				      <span class="close">&times;</span>
-				      <form id="CalorieIntake" target="_self">
-					<label for="weight">Weight (lbs)</label>
-					<input type="number" id="weight" name="weight" min="1" required><br>
+						<span class="close">&times;</span>
+						<form id="CalorieIntake" target="_self">
+							<label for="weight">Weight (lbs)</label>
+							<input type="number" id="weight" name="weight" min="1" required><br>
 
-					<label>Height</label>
-					<label for="heightFT">(ft)</label>
-					<input type="number" id="heightFT" name="heightFT" min="1" required>
-					<lable for="heightInch">(inches)</lable>
-					<input type="number" id="heightInch" name="heightInch" min="0" required><br>
+							<label>Height</label>
+							<label for="heightFT">(ft)</label>
+							<input type="number" id="heightFT" name="heightFT" min="1" required>
+							<label for="heightInch">(inches)</label>
+							<input type="number" id="heightInch" name="heightInch" min="0" required><br>
 
-					<label for="age">Age</label>
-					<input type="number" id="age" name="age" min="18" max="100" required> <br>
+							<label for="age">Age</label>
+							<input type="number" id="age" name="age" min="18" max="100" required> <br>
 
-					<label for="sex">Sex</label>
-					<input list="sex" name="sex" required><br>
-					  <datalist id="sex">
-					    <option value="Male">
-					    <option value="Female">
-					  </datalist>
+							<label for="sex">Sex</label>
+							<input list="sex" name="sex" required><br>
+						  <datalist id="sex">
+						    <option value="Male">
+						    <option value="Female">
+							</datalist>
 
-					<lable for="activity">Activity Level</lable>
-					<input list="activity" name="activity" required><br>
-					<datalist id="activity">
-					  <option value="Sedentary">
-					  <option value="Low-Moderate">
-					  <option value="Very Active"> 
-					</datalist>
+							<label for="activity">Activity Level</label>
+							<input list="activity" name="activity" required><br>
+							<datalist id="activity">
+							  <option value="Sedentary">
+							  <option value="Low-Moderate">
+							  <option value="Very Active"> 
+							</datalist>
 
-					<input type="submit" value="Submit" name="submit">
+							<input type="submit" value="Submit" name="submit">
 
 				    </form>
 			    </div> <!-- End of Modal Content  -->
 
-			</div>  <!-- End of Modal -->
+				</div>  <!-- End of Modal -->
 			</div>	
+			<br>
 
+			<!-- form that allows the user to search for food or manually enter food -->
 			<div class="data-entry">
 				<p>What did you eat today?</p>
 
@@ -77,15 +78,15 @@
 					</form>
 				</div>
 
-				<div id="search-results">
-					
+				<div id="search-results">	
 				</div>
-
+		
 				<form class="food-data">
 					<div>
 						<input type="text" id="foodName" placeholder="Food item">
 						<input type="number" id="calServe" placeholder="Calories per serving">
-						<input type="number" id="servings" placeholder="Number of servings">
+						<input type="number" id="servings" placeholder="Number of servings" min="1" required>
+						<br>
 						<span class="btn">
 							<button type="submit" onclick="drawTable(); return false">Add</button>
 						</span>
@@ -93,6 +94,7 @@
 				</form>
 			</div>
 
+			<!-- table showing food the user has eaten -->
 			<div class="table">
 				<table id="genTable">
 					<thead>
@@ -106,15 +108,18 @@
 				</table>
 			</div>
 
+			<!-- progress bar to show how the user's actual calorie intake compares with the recommended calorie intake -->
 			<p class="cal-label">Calorie Progress</p>
 			<div class="barWrap">
 				<div class="progPerc"></div>
 				<div class="progBar"></div>
+				<p id="inspiration"></p>
 			</div>
-			
-		</div>
-	</div>
+
+		</div> <!-- end of div class="main" -->
+	</div> <!-- end of div class="content"-->
 
 	<script src="script.js"></script>
+	
 </body>
 </html>
